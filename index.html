@@ -1,0 +1,471 @@
+---
+
+---
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible"
+content="ie=edge">
+<title>Loggy | Feelings Joural</title>
+<link href="./screen.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+
+</head>
+<body class="font-['Roboto']  bg-teal-400">
+<div class="flex h-screen">
+<!-- sidebar -->
+<div class="hidden md:flex flex-col w-64">
+<div class="flex items-center justify-left h-16 ml-2 mt-2">
+<img src="images/small-logo.png"
+alt="Loggy small-logo">
+</div>
+<div class="content-center flex flex-col flex-1 overflow-y-auto" >
+<nav class="flex-1 px-2 py-4">
+<a href="/"
+id="loggyHome"
+class="flex items-center px-4 py-2 text-gray-100 hover:bg-teal-600 active:bg-white active:text-black">
+<svg xmlns="http://www.w3.org/2000/svg"
+viewBox="0 0 448 512"
+viewBox="0 0 512 512"
+class="h-6 w-6 mr-2"
+fill="#fbbf24"
+stroke="black">
+<path stroke-linecap="round"
+stroke-linejoin="round"
+stroke-width="15px"
+d="M471.6 21.7c-21.9-21.9-57.3-21.9-79.2 0L362.3 51.7l97.9 97.9 30.1-30.1c21.9-21.9 21.9-57.3 0-79.2L471.6 21.7zm-299.2 220c-6.1 6.1-10.8 13.6-13.5 21.9l-29.6 88.8c-2.9 8.6-.6 18.1 5.8 24.6s15.9 8.7 24.6 5.8l88.8-29.6c8.2-2.7 15.7-7.4 21.9-13.5L437.7 172.3 339.7 74.3 172.4 241.7zM96 64C43 64 0 107 0 160V416c0 53 43 96 96 96H352c53 0 96-43 96-96V320c0-17.7-14.3-32-32-32s-32 14.3-32 32v96c0 17.7-14.3 32-32 32H96c-17.7 0-32-14.3-32-32V160c0-17.7 14.3-32 32-32h96c17.7 0 32-14.3 32-32s-14.3-32-32-32H96z"/>
+</svg>                      
+My Feelings Log
+</a>
+<a href="/insights"
+class="flex items-center px-4 py-2 mt-2 text-gray-100 hover:bg-teal-600 active:bg-white active:text-black">
+<svg xmlns="http://www.w3.org/2000/svg"
+viewBox="0 0 448 512"
+viewBox="0 0 512 512"
+class="h-6 w-6 mr-2"
+fill="#fbbf24"
+stroke="black">
+<path stroke-linecap="round"
+stroke-linejoin="round"
+stroke-width="15px"
+d="M64 64c0-17.7-14.3-32-32-32S0 46.3 0 64V400c0 44.2 35.8 80 80 80H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H80c-8.8 0-16-7.2-16-16V64zm406.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L320 210.7l-57.4-57.4c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L240 221.3l57.4 57.4c12.5 12.5 32.8 12.5 45.3 0l128-128z"/>
+</svg>                                                         
+My Insights
+</a>
+<a href="/#/"
+class="flex items-center px-4 py-2 mt-2 text-gray-100 hover:bg-teal-600 active:bg-white active:text-black">
+<svg xmlns="http://www.w3.org/2000/svg"
+viewBox="0 0 448 512"
+viewBox="0 0 512 512"
+class="h-6 w-6 mr-2"
+fill="#fbbf24"
+stroke="black">
+<path stroke-linecap="round"
+stroke-linejoin="round"
+stroke-width="15px"
+d="M224 112c-8.8 0-16-7.2-16-16V80c0-44.2 35.8-80 80-80h16c8.8 0 16 7.2 16 16V32c0 44.2-35.8 80-80 80H224zM0 288c0-76.3 35.7-160 112-160c27.3 0 59.7 10.3 82.7 19.3c18.8 7.3 39.9 7.3 58.7 0c22.9-8.9 55.4-19.3 82.7-19.3c76.3 0 112 83.7 112 160c0 128-80 224-160 224c-16.5 0-38.1-6.6-51.5-11.3c-8.1-2.8-16.9-2.8-25 0c-13.4 4.7-35 11.3-51.5 11.3C80 512 0 416 0 288z"/>
+</svg>               
+Lesson Plans
+</a>
+<a href="#"
+class="flex items-center px-4 py-2 mt-2 text-gray-100 hover:bg-teal-600 active:bg-white active:text-black">
+<svg xmlns="http://www.w3.org/2000/svg"
+viewBox="0 0 448 512"
+viewBox="0 0 512 512"
+class="h-6 w-6 mr-2"
+fill="#fbbf24"
+stroke="black">
+<path stroke-linecap="round"
+stroke-linejoin="round"
+stroke-width="15px"
+d="M224 0a80 80 0 1 1 0 160A80 80 0 1 1 224 0zM436.8 382.8L373.5 462c-16.6 20.7-46.8 24.1-67.5 7.5c-17.6-14.1-22.7-38.1-13.5-57.7l-.8-.1c-38.9-5.6-74.3-25.1-99.7-54.8V320c0-17.7-14.3-32-32-32s-32 14.3-32 32v48c0 .8 0 1.6 .1 2.4l101.4 50.7c23.7 11.9 33.3 40.7 21.5 64.4s-40.7 33.3-64.4 21.5L27.2 427.3c-1.1-.5-2.2-1.1-3.3-1.7c-4.9-2.8-9.2-6.4-12.6-10.6c-4.6-5.4-7.8-11.7-9.6-18.4c-3.3-12-1.9-25.2 4.8-36.6c.6-1.1 1.3-2.2 2-3.2L75.6 256.1c26.7-40.1 71.7-64.1 119.8-64.1h75.2c46.5 0 90.1 22.5 117.2 60.3l50.7 70.9c2.2 3 4 6.1 5.5 9.4c2.9 6.7 4.3 13.8 4 20.8c-.3 10.6-4.2 21-11.2 29.4zM320 332a44 44 0 1 0 -88 0 44 44 0 1 0 88 0z"/>
+</svg>                                         
+Parent Portfolio
+</a>
+</nav>
+</div>
+</div>
+<!--Main content-->
+<div class="flex flex-col flex-1 bg-white my-5 mr-5 rounded-lg w-full">
+<!--Title Bar-->
+<div class="flex items-center justify-between h-16 border-b border-gray-200 pt-5">
+<h1 class="text-4xl font-bold px-5">My Feelings Log</h1>
+<div class="flex items-center pr-4 space-x-5">
+<p>PeterRabbit923</p>
+<!-- Profile dropdown -->
+<div x-data="Components.menu({ open: false })"
+x-init="init()"
+@keydown.escape.stop="open = false; focusButton()"
+@click.away="onClickAway($event)"
+class="relative ml-3 flex-shrink-0">
+<div>
+<button type="button"
+class="flex rounded-full bg-gray-50 text-sm text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-gray-50"
+id="user-menu-button"
+x-ref="button"
+@click="onButtonClick()"
+@keyup.space.prevent="onButtonEnter()"
+@keydown.enter.prevent="onButtonEnter()"
+aria-expanded="false"
+aria-haspopup="true"
+x-bind:aria-expanded="open.toString()"
+@keydown.arrow-up.prevent="onArrowUp()"
+@keydown.arrow-down.prevent="onArrowDown()">
+<span class="sr-only">Open user menu</span>
+<img class="h-8 w-8 rounded-full"
+src="/images/peterrabit.jpg"
+alt="peter rabbit illustration">
+</button>
+</div>
+</div>
+<!-- Notifications -->
+<div class="relative">
+<svg class="w-8 h-8 text-teal-600 animate-wiggle"
+xmlns="http://www.w3.org/2000/svg"
+viewBox="0 0 21 21">
+<path fill="#fbbf24"
+stroke="black"
+stroke-linecap="round"
+stroke-linejoin="round"
+d="M15.585 15.5H5.415A1.65 1.65 0 0 1 4 13a10.526 10.526 0 0 0 1.5-5.415V6.5a4 4 0 0 1 4-4h2a4 4 0 0 1 4 4v1.085c0 1.907.518 3.78 1.5 5.415a1.65 1.65 0 0 1-1.415 2.5zm1.915-11c-.267-.934-.6-1.6-1-2s-1.066-.733-2-1m-10.912 3c.209-.934.512-1.6.912-2s1.096-.733 2.088-1M13 17c-.667 1-1.5 1.5-2.5 1.5S8.667 18 8 17"/>
+</svg>
+<div class="px-1 bg-teal-500 rounded-full text-center text-white text-sm absolute -top-3 -end-2">
+3
+</div>
+</div>
+</div>
+</div>
+<!-- Prompts-->
+<div class="p-4">
+<p class="mt-2 text-gray-600">Pick a feeling and share more about it.</p>
+</div>
+<div class="p-4">
+<h1 class="text-orange-500"><div id ="updateSentence"></div></h1>
+</div>
+<!--Feelings Log Grid-->
+<div class="bg-white p-8">
+    <div class="container mx-auto px-2 flex flex-col md:flex-row">
+        <div class="w-3/5 md:w-5/6 px-2">
+<div class="container relative z-40 mx-auto mt-5">
+<div class="grid gap-1 grid-cols-4 justify-center m-0 lg:w-full">
+<!--Feelings -->
+<a href="#"
+class="block w-1/2 text-center lg:w-1/4">
+<input type="radio" id="Happy" name="feelings" value="Happy" class="hidden peer" required />
+<label for="Happy" class="inline-flex items-center justify-center w-full p-5  rounded-lg cursor-pointer peer-checked:border-teal-500 hover:border-teal-500 peer-checked:border-4 hover:border-4 hover:bg-transparent">                                                                                  
+<div>
+<img id="emoji" src="/images/feelings/Happy.png"
+alt="Happy face"
+class="block mx-auto">
+<p class="pt-4 text-sm font-medium capitalize font-body text-black lg:text-lg md:text-base md:pt-6">
+Happy
+</p>
+</div>
+</label>
+</a>
+<a href="#"
+class="block w-1/2 text-center lg:w-1/4">
+<input type="radio" id="Excited" name="feelings" value="Excited" class="hidden peer" required />
+<label for="Excited" class="inline-flex items-center justify-center w-full p-5  rounded-lg cursor-pointer peer-checked:border-teal-500 hover:border-teal-500 peer-checked:border-4 hover:border-4 hover:bg-transparent">                                                                                  
+<div>
+<img id="emoji" src="/images/feelings/Excited.png"
+alt="Excited face"
+class="block mx-auto">
+<p class="pt-4 text-sm font-medium capitalize font-body text-black lg:text-lg md:text-base md:pt-6">
+Excited
+</p>
+</div>
+</label>
+</a>
+<a href="#"
+class="block w-1/2 text-center lg:w-1/4">
+<input type="radio" id="Surprised" name="feelings" value="Surprised" class="hidden peer" required />
+<label for="Surprised" class="inline-flex items-center justify-center w-full p-5  rounded-lg cursor-pointer peer-checked:border-teal-500 hover:border-teal-500 peer-checked:border-4 hover:border-4 hover:bg-transparent">                                                                                  
+<div>
+<img id="emoji" src="/images/feelings/Surprised.png"
+alt="Surprised face"
+class="block mx-auto">
+<p class="pt-4 text-sm font-medium capitalize font-body text-black lg:text-lg md:text-base md:pt-6">
+Surprised
+</p>
+</div>
+</label>
+</a>
+<a href="#"
+class="block w-1/2 text-center lg:w-1/4">
+<input type="radio" id="Silly" name="feelings" value="Silly" class="hidden peer" required />
+<label for="silly" class="inline-flex items-center justify-center w-full p-5  rounded-lg cursor-pointer peer-checked:border-teal-500 hover:border-teal-500 peer-checked:border-4 hover:border-4 hover:bg-transparent">                                                                                  
+<div>
+<img id="emoji" src="/images/feelings/Silly.png"
+alt="Silly face"
+class="block mx-auto">
+<p class="pt-4 text-sm font-medium capitalize font-body text-black lg:text-lg md:text-base md:pt-6">
+Silly
+</p>
+</div>
+</label>
+</a>
+<a href="#"
+class="block w-1/2 text-center lg:w-1/4">
+<input type="radio" id="Worried" name="feelings" value="Worried" class="hidden peer" required />
+<label for="Worried" class="inline-flex items-center justify-center w-full p-5  rounded-lg cursor-pointer peer-checked:border-teal-500 hover:border-teal-500 peer-checked:border-4 hover:border-4 hover:bg-transparent">                                                                                  
+<div>
+<img id="emoji" src="/images/feelings/Worried.png"
+alt="Worried face"
+class="block mx-auto">
+<p class="pt-4 text-sm font-medium capitalize font-body text-black lg:text-lg md:text-base md:pt-6">
+Worried
+</p>
+</div>
+</label>
+</a>
+<a href="#"
+class="block w-1/2 text-center lg:w-1/4">
+<input type="radio" id="Scared" name="feelings" value="Scared" class="hidden peer" required />
+<label for="Scared" class="inline-flex items-center justify-center w-full p-5  rounded-lg cursor-pointer peer-checked:border-teal-500 hover:border-teal-500 peer-checked:border-4 hover:border-4 hover:bg-transparent">                                                                                  
+<div>
+<img id="emoji" src="/images/feelings/Scared.png"
+alt="Scared face"
+class="block mx-auto">
+<p class="pt-4 text-sm font-medium capitalize font-body text-black lg:text-lg md:text-base md:pt-6">
+Scared
+</p>
+</div>
+</label>
+</a>
+<a href="#"
+class="block w-1/2 text-center lg:w-1/4">
+<input type="radio" id="Bored" name="feelings" value="Bored" class="hidden peer" required />
+<label for="Bored" class="inline-flex items-center justify-center w-full p-5  rounded-lg cursor-pointer peer-checked:border-teal-500 hover:border-teal-500 peer-checked:border-4 hover:border-4 hover:bg-transparent">                                                                                  
+<div>
+<img id="emoji" src="/images/feelings/Bored.png"
+alt="Bored face"
+class="block mx-auto">
+<p class="pt-4 text-sm font-medium capitalize font-body text-black lg:text-lg md:text-base md:pt-6">
+Bored
+</p>
+</div>
+</label>
+</a>
+<a href="#"
+class="block w-1/2 text-center lg:w-1/4">
+<input type="radio" id="Disappointed" name="feelings" value="Disappointed" class="hidden peer" required />
+<label for="Disappointed" class="inline-flex items-center justify-center w-full p-5  rounded-lg cursor-pointer peer-checked:border-teal-500 hover:border-teal-500 peer-checked:border-4 hover:border-4 hover:bg-transparent">                                                                                  
+<div>
+<img id="emoji" src="/images/feelings/Disappointed.png"
+alt="Disappointed face"
+class="block mx-auto">
+<p class="pt-4 text-sm font-medium capitalize font-body text-black lg:text-lg md:text-base md:pt-6">
+Disappointed
+</p>
+</div>
+</label>
+</a>
+<a href="#"
+class="block w-1/2 text-center lg:w-1/4">
+<input type="radio" id="Lonely" name="feelings" value="Lonely" class="hidden peer" required />
+<label for="Lonely" class="inline-flex items-center justify-center w-full p-5  rounded-lg cursor-pointer peer-checked:border-teal-500 hover:border-teal-500 peer-checked:border-4 hover:border-4 hover:bg-transparent">                                                                                  
+<div>
+<img id="emoji" src="/images/feelings/Lonely.png"
+alt="Lonely face"
+class="block mx-auto">
+<p class="pt-4 text-sm font-medium capitalize font-body text-black lg:text-lg md:text-base md:pt-6">
+Lonely
+</p>
+</div>
+</label>
+</a>
+<a href="#"
+class="block w-1/2 text-center lg:w-1/4">
+<input type="radio" id="Sad" name="feelings" value="Sad" class="hidden peer" required />
+<label for="Sad" class="inline-flex items-center justify-center w-full p-5  rounded-lg cursor-pointer peer-checked:border-teal-500 hover:border-teal-500 peer-checked:border-4 hover:border-4 hover:bg-transparent">                                                                                  
+<div>
+<img id="emoji" src="/images/feelings/Sad.png"
+alt="Sad face"
+class="block mx-auto">
+<p class="pt-4 text-sm font-medium capitalize font-body text-black lg:text-lg md:text-base md:pt-6">
+Sad
+</p>
+</div>
+</label>
+</a>
+<a href="#"
+class="block w-1/2 text-center lg:w-1/4">
+<input type="radio" id="Embarrassed" name="feelings" value="Embarrassed" class="hidden peer" required />
+<label for="Embarrassed" class="inline-flex items-center justify-center w-full p-5  rounded-lg cursor-pointer peer-checked:border-teal-500 hover:border-teal-500 peer-checked:border-4 hover:border-4 hover:bg-transparent">                                                                                  
+<div>
+<img id="emoji" src="/images/feelings/Embarrassed.png"
+alt="Embarrassed face"
+class="block mx-auto">
+<p class="pt-4 text-sm font-medium capitalize font-body text-black lg:text-lg md:text-base md:pt-6">
+Embarrassed
+</p>
+</div>
+</label>
+</a>
+<a href="#"
+class="block w-1/2 text-center lg:w-1/4">
+<input type="radio" id="Overwhelmed" name="feelings" value="Overwhelmed" class="hidden peer" required />
+<label for="Overwhelmed" class="inline-flex items-center justify-center w-full p-5  rounded-lg cursor-pointer peer-checked:border-teal-500 hover:border-teal-500 peer-checked:border-4 hover:border-4 hover:bg-transparent">                                                                                  
+<div>
+<img id="emoji" src="/images/feelings/Overwhelmed.png"
+alt="Overwhelmed face"
+class="block mx-auto">
+<p class="pt-4 text-sm font-medium capitalize font-body text-black lg:text-lg md:text-base md:pt-6">
+Overwhelmed
+</p>
+</div>
+</label>
+</a>
+<a href="#"
+class="block w-1/2 text-center lg:w-1/4">
+<input type="radio" id="Disgusted" name="feelings" value="Disgusted" class="hidden peer" required />
+<label for="Disgusted" class="inline-flex items-center justify-center w-full p-5  rounded-lg cursor-pointer peer-checked:border-teal-500 hover:border-teal-500 peer-checked:border-4 hover:border-4 hover:bg-transparent">                                                                                  
+<div>
+<img id="emoji" src="/images/feelings/Disgust.png"
+alt="Disgust face"
+class="block mx-auto">
+<p class="pt-4 text-sm font-medium capitalize font-body text-black lg:text-lg md:text-base md:pt-6">
+Disgusted
+</p>
+</div>
+</label>
+</a>
+<a href="#"
+class="block w-1/2 text-center lg:w-1/4">
+<input type="radio" id="Jealous" name="feelings" value="Jealous" class="hidden peer" required />
+<label for="Jealous" class="inline-flex items-center justify-center w-full p-5  rounded-lg cursor-pointer peer-checked:border-teal-500 hover:border-teal-500 peer-checked:border-4 hover:border-4 hover:bg-transparent">                                                                                  
+<div>
+<img id="emoji" src="/images/feelings/Jealous.png"
+alt="Jealous face"
+class="block mx-auto">
+<p class="pt-4 text-sm font-medium capitalize font-body text-black lg:text-lg md:text-base md:pt-6">
+Jealous
+</p>
+</div>
+</label>
+</a>
+<a href="#"
+class="block w-1/2 text-center lg:w-1/4">
+<input type="radio" id="Angry" name="feelings" value="Angry" class="hidden peer" required />
+<label for="Angry" class="inline-flex items-center justify-center w-full p-5  rounded-lg cursor-pointer peer-checked:border-teal-500 hover:border-teal-500 peer-checked:border-4 hover:border-4 hover:bg-transparent">                                                                                  
+<div>
+<img id="emoji" src="/images/feelings/Angry.png"
+alt="Angry face"
+class="block mx-auto">
+<p class="pt-4 text-sm font-medium capitalize font-body text-black lg:text-lg md:text-base md:pt-6">
+Angry
+</p>
+</div>
+</label>
+</a>
+<a href="#"
+class="block w-1/2 text-center lg:w-1/4">
+<input type="radio" id="Frustrated" name="feelings" value="Frustrated" class="hidden peer" required />
+<label for="Frustrated" class="inline-flex items-center justify-center w-full p-5  rounded-lg cursor-pointer peer-checked:border-teal-500 hover:border-teal-500 peer-checked:border-4 hover:border-4 hover:bg-transparent">                                                                                  
+<div>
+<img id="emoji" src="/images/feelings/Frustrated.png"
+alt="Frustrated face"
+class="block mx-auto">
+<p class="pt-4 text-sm font-medium capitalize font-body text-black lg:text-lg md:text-base md:pt-6">
+Frustrated
+</p>
+</div>
+</label>
+</a>
+</div>
+</div>
+</div>
+<!--User Inputs-->
+<div class="w-2/5 px-4">
+<!--Date Picker-->
+<div class="grid justify-items-center p-4 mt-4"> 
+
+<div class="relative max-w-sm">
+<div class="absolute inset-y-0 start-0 flex items-center pointer-events-none">
+<svg class="w-4 h-4 mx-2 text-teal-900" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+<path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
+</svg>
+</div>
+
+<input datepicker datepicker-buttons datepicker-autoselect-today type="text" id="date" class="bg-gray-50 border  border-gray-300 text-teal-900 text-sm rounded-lg focus:ring-teal-500 focus:border-teal-500 block w-full ps-10 p-2.5" placeholder="Select date">
+</div>
+</div>
+
+<!--What Made You Feel This Way-->
+<div class="grid justify-items-center p-4 max-w-xs border-gray-50 ">                                                                               
+<label for="message" class="block mb-2 text-sm font-medium text-black">
+What made you feel this way?
+</label>
+<textarea id="message" rows="4" class="block w-full text-sm text-black bg-gray-50 rounded-lg border border-gray-300 focus:ring-teal-500 focus:border-teal-500" placeholder="Type your answer here.">
+</textarea>
+</div>
+<!--Save Button-->
+<div class="grid justify-items-center p-4 mt-4">
+<button type="button" 
+id="saveBtn"
+class="max-w-[140px] py-2 px-4 flex justify-center items-center  bg-orange-300 hover:bg-orange-400 active:bg-orange-400 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg ">
+<svg width="20"
+height="20"
+fill="currentColor"
+class="mr-2"
+viewBox="0 0 448 512"
+xmlns="http://www.w3.org/2000/svg">
+<path d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V173.3c0-17-6.7-33.3-18.7-45.3L352 50.7C340 38.7 323.7 32 306.7 32H64zm0 96c0-17.7 14.3-32 32-32H288c17.7 0 32 14.3 32 32v64c0 17.7-14.3 32-32 32H96c-17.7 0-32-14.3-32-32V128zM224 288a64 64 0 1 1 0 128 64 64 0 1 1 0-128z">
+</path>
+</svg>
+Log Entry
+</button>
+</div>
+</div>
+</div>
+</div>
+<!--End of Main Content div-->
+</div>
+</div>
+
+<script>
+    document.getElementById('saveBtn').addEventListener('click', function() {
+        const date = document.getElementById('date').value;
+        const selectedFeelings = document.querySelector('input[name="feelings"]:checked');
+        const feelingsId = selectedFeelings ? selectedFeelings.id : "";
+        const message = document.getElementById('message').value;
+
+        // Check if all required fields are filled
+        if (date && feelingsId) {
+            // Save the data to local storage
+            localStorage.setItem('date', date);
+            localStorage.setItem('feelingsId', feelingsId);
+            localStorage.setItem('message', message);
+
+            // Redirect to Insights page
+            window.location.href = 'insights.html';
+        } else {
+            alert('Please fill in all required fields.');
+        }
+    });
+
+   
+    function updateSentence() {
+
+    // Update the sentence in real-time
+    sentenceContainer.textContent = `The user entered: "${'feelingsId'}"`;
+}
+
+ // Clear local storage when navigating back to this page from Insights
+    window.onload = function() {
+        localStorage.removeItem('date');
+        localStorage.removeItem('feelingsId');
+        localStorage.removeItem('message');
+    };
+  
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/datepicker.min.js"></script>
+
+</body>
+</html>
