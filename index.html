@@ -404,52 +404,7 @@ Log Entry
 </div>
 </div>
 
-<script>
-    document.getElementById('saveBtn').addEventListener('click', function() {
-        const date = document.getElementById('date').value;
-        const selectedFeelings = document.querySelector('input[name="feelings"]:checked');
-        const feelingsId = selectedFeelings ? selectedFeelings.id : "";
-        const message = document.getElementById('message').value;
-
-        // Check if all required fields are filled
-        if (date && feelingsId) {
-            // Save the data to local storage
-            localStorage.setItem('date', date);
-            localStorage.setItem('feelingsId', feelingsId);
-            localStorage.setItem('message', message);
-
-            // Redirect to Insights page
-            window.location.href = 'insights.html';
-        } else {
-            alert('Please fill in all required fields.');
-        }
-    });
-
-    // Get all radio buttons with the name "feelings"
-    const feelingsRadios = document.querySelectorAll('input[name="feelings"]');
-
-    // Get the paragraph where the selected feeling ID will be printed
-    const selectedFeelingIdPrint = document.getElementById('selectedFeelingId');
-
-    // Add event listener to each radio button to listen for changes
-    feelingsRadios.forEach(radio => {
-        radio.addEventListener('change', function() {
-            // Print the ID of the selected radio button
-            selectedFeelingIdPrint.textContent = `${this.id}`;
-        });
-    });
-
-
-
-
- // Clear local storage when navigating back to this page from Insights
-    window.onload = function() {
-        localStorage.removeItem('date');
-        localStorage.removeItem('feelingsId');
-        localStorage.removeItem('message');
-    };
-  
-</script>
+<script src="./script.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/datepicker.min.js"></script>
 <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.js"></script>
 
