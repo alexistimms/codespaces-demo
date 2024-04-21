@@ -1,4 +1,4 @@
-/////////////////////////////////////// INDEX (MAIN) HTML PAGE JAVA FUNCTIONS/////////////////////////////////////////////////////////////////
+////////////////////////////////////// INDEX (MAIN) HTML PAGE JAVA FUNCTIONS/////////////////////////////////////////////////////////////////
 function updateSelectedFeelingId() {
     const feelingsRadios = document.querySelectorAll('input[name="feelings"]');
     const selectedFeelingIdPrint = document.getElementById('selectedFeelingId');
@@ -103,13 +103,6 @@ function displayInsights() {
     });
 }
 
-// Function to Login
-document.getElementById('logInBtn').addEventListener('click', function() {
-
-    // Redirect to Main page
-    window.location.href = 'index.html';
-
-});
 
 
 
