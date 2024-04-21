@@ -1,8 +1,3 @@
----
-
----
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,7 +21,7 @@ alt="Loggy small-logo">
 </div>
 <div class="content-center flex flex-col flex-1 overflow-y-auto" >
 <nav class="flex-1 px-2 py-4">
-<a href="/"
+<a href="./index.html"
 id="loggyHome"
 class="flex items-center px-4 py-2 text-gray-100 hover:bg-teal-600 active:bg-white active:text-black">
 <svg xmlns="http://www.w3.org/2000/svg"
@@ -42,7 +37,7 @@ d="M471.6 21.7c-21.9-21.9-57.3-21.9-79.2 0L362.3 51.7l97.9 97.9 30.1-30.1c21.9-2
 </svg>                      
 My Feelings Log
 </a>
-<a href="/insights"
+<a href="./insights.html"
 class="flex items-center px-4 py-2 mt-2 text-gray-100 hover:bg-teal-600 active:bg-white active:text-black">
 <svg xmlns="http://www.w3.org/2000/svg"
 viewBox="0 0 448 512"
@@ -97,32 +92,10 @@ Parent Portfolio
 <h1 class="text-4xl font-bold px-5">My Feelings Log</h1>
 <div class="flex items-center pr-4 space-x-5">
 <p>PeterRabbit923</p>
-<!-- Profile dropdown -->
-<div x-data="Components.menu({ open: false })"
-x-init="init()"
-@keydown.escape.stop="open = false; focusButton()"
-@click.away="onClickAway($event)"
-class="relative ml-3 flex-shrink-0">
-<div>
-<button type="button"
-class="flex rounded-full bg-gray-50 text-sm text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-gray-50"
-id="user-menu-button"
-x-ref="button"
-@click="onButtonClick()"
-@keyup.space.prevent="onButtonEnter()"
-@keydown.enter.prevent="onButtonEnter()"
-aria-expanded="false"
-aria-haspopup="true"
-x-bind:aria-expanded="open.toString()"
-@keydown.arrow-up.prevent="onArrowUp()"
-@keydown.arrow-down.prevent="onArrowDown()">
-<span class="sr-only">Open user menu</span>
-<img class="h-8 w-8 rounded-full"
+<!-- Profile picture -->
+<img id="profilePicture" class="h-8 w-8 rounded-full border-teal-400 border-2"
 src="/images/peterrabit.jpg"
 alt="peter rabbit illustration">
-</button>
-</div>
-</div>
 <!-- Notifications -->
 <div class="relative">
 <svg class="w-8 h-8 text-teal-600 animate-wiggle"
@@ -142,18 +115,20 @@ d="M15.585 15.5H5.415A1.65 1.65 0 0 1 4 13a10.526 10.526 0 0 0 1.5-5.415V6.5a4 4
 </div>
 <!-- Prompts-->
 <div class="p-4">
-<p class="mt-2 text-gray-600">Pick a feeling and share more about it.</p>
-</div>
-<div class="p-4">
-<h1 class="text-orange-500"><div id ="updateSentence"></div></h1>
-</div>
-<!--Feelings Log Grid-->
-<div class="bg-white p-8">
-    <div class="container mx-auto px-2 flex flex-col md:flex-row">
-        <div class="w-3/5 md:w-5/6 px-2">
-<div class="container relative z-40 mx-auto mt-5">
-<div class="grid gap-1 grid-cols-4 justify-center m-0 lg:w-full">
-<!--Feelings -->
+    <p class="mt-2 text-gray-600 italic">Pick a feeling and share more about it.</p>
+    </div>
+    <span class="flex p-4 space-x-4">
+    <h2 class="text-black text-3xl">Today I felt</h2>
+    <span class="text-orange-400 text-3xl underline underline-offset-15" style="text-decoration: underline black;" id="selectedFeelingId"></span>
+    <h2 class="text-black text-3xl">.</h2>
+    </span>
+    <!--Feelings Log Grid-->
+    <div class="bg-white pt-2 pb-8">
+        <div class="container mx-auto px-2 flex flex-col md:flex-row">
+            <div class="w-3/5 md:w-5/6 px-2">
+    <div class="container relative z-40 mx-auto mt-1">
+        <div class="grid grid-cols-4 gap-4 justify-center mx-auto lg:w-full md:w-5/6">
+    <!--Feelings -->
 <a href="#"
 class="block w-1/2 text-center lg:w-1/4">
 <input type="radio" id="Happy" name="feelings" value="Happy" class="hidden peer" required />
@@ -199,7 +174,7 @@ Surprised
 <a href="#"
 class="block w-1/2 text-center lg:w-1/4">
 <input type="radio" id="Silly" name="feelings" value="Silly" class="hidden peer" required />
-<label for="silly" class="inline-flex items-center justify-center w-full p-5  rounded-lg cursor-pointer peer-checked:border-teal-500 hover:border-teal-500 peer-checked:border-4 hover:border-4 hover:bg-transparent">                                                                                  
+<label for="Silly" class="inline-flex items-center justify-center w-full p-5  rounded-lg cursor-pointer peer-checked:border-teal-500 hover:border-teal-500 peer-checked:border-4 hover:border-4 hover:bg-transparent">                                                                                  
 <div>
 <img id="emoji" src="/images/feelings/Silly.png"
 alt="Silly face"
@@ -450,12 +425,22 @@ Log Entry
         }
     });
 
-   
-    function updateSentence() {
+    // Get all radio buttons with the name "feelings"
+    const feelingsRadios = document.querySelectorAll('input[name="feelings"]');
 
-    // Update the sentence in real-time
-    sentenceContainer.textContent = `The user entered: "${'feelingsId'}"`;
-}
+    // Get the paragraph where the selected feeling ID will be printed
+    const selectedFeelingIdPrint = document.getElementById('selectedFeelingId');
+
+    // Add event listener to each radio button to listen for changes
+    feelingsRadios.forEach(radio => {
+        radio.addEventListener('change', function() {
+            // Print the ID of the selected radio button
+            selectedFeelingIdPrint.textContent = `${this.id}`;
+        });
+    });
+
+
+
 
  // Clear local storage when navigating back to this page from Insights
     window.onload = function() {
@@ -466,6 +451,8 @@ Log Entry
   
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/datepicker.min.js"></script>
+<script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.js"></script>
+
 
 </body>
 </html>

@@ -47,7 +47,8 @@ module.exports = {
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   mode:'jit',
-  purge['./index.html'],
+  purge:['./index.html', './insights.html',
+],
   content: [
     "./node_modules/flowbite/**/*.js",
     "./src/**/*.{html,js}",
