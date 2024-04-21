@@ -368,7 +368,7 @@ Frustrated
 </svg>
 </div>
 
-<input datepicker datepicker-buttons datepicker-autoselect-today type="text" id="date" class="bg-gray-50 border  border-gray-300 text-teal-900 text-sm rounded-lg focus:ring-teal-500 focus:border-teal-500 block w-full ps-10 p-2.5" placeholder="Select date">
+<input datepicker datepicker-buttons datepicker-autoselect-today datepicker-autohide type="text" id="date" class="bg-gray-50 border  border-gray-300 text-teal-900 text-sm rounded-lg focus:ring-teal-500 focus:border-teal-500 block w-full ps-10 p-2.5" placeholder="Select date">
 </div>
 </div>
 
@@ -403,6 +403,16 @@ Log Entry
 <!--End of Main Content div-->
 </div>
 </div>
+
+<script>
+    // Clear local storage when navigating back to this page from Insights
+    window.onload = function() {
+       localStorage.removeItem('date');
+       localStorage.removeItem('feelingsId');
+       localStorage.removeItem('message');
+   };
+</script>
+
 
 <script src="./script.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/datepicker.min.js"></script>
